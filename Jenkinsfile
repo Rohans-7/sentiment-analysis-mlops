@@ -3,12 +3,16 @@ pipeline {
 
     environment {
         IMAGE_NAME = "imrds7/sentiment-analysis-app"
+        GITHUB_REPO_URL = 'https://github.com/Rohans-7/sentiment-analysis-mlops.git'
     }
 
     stages {
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/Rohans-7/sentiment-analysis-mlops.git'
+                script {
+                    // Checkout the code from the GitHub repository
+                    git branch: 'main', url: "${GITHUB_REPO_URL}"
+                }
             }
         }
 
