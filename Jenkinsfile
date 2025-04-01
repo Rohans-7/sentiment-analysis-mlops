@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-repo/sentiment-analysis.git'
+                git 'https://github.com/Rohans-7/sentiment-analysis-mlops.git'
             }
         }
 

@@ -1,10 +1,8 @@
 import joblib
 from flask import Flask, request, jsonify
 
-# Load the trained model
 model = joblib.load('sentiment_model.pkl')
 
-# Initialize Flask app
 app = Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
