@@ -17,8 +17,8 @@
     - name: Pull Docker Image
       shell: docker pull imrds7/sentiment-analysis-app:latest
 
-    - name: Running container
-      shell: docker run -it -d -p 5000:5000 --name sentiment-analysis-app imrds7/sentiment-analysis-app /bin/bash
+    # - name: Running container
+    #   shell: docker run -it -d -p 5000:5000 --name sentiment-analysis-app imrds7/sentiment-analysis-app /bin/bash
 
-    # - name: Apply Kubernetes Deployment
-    #   shell: kubectl apply -f k8s-deployment.yaml
+    - name: Apply Kubernetes Deployment
+      shell: kubectl apply -f k8s-deployment.yaml
