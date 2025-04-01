@@ -29,11 +29,17 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy to Kubernetes') {
-            steps {
-                sh 'kubectl apply -f k8s-deployment.yaml'
+        stage('Run Ansible Playbook') {
+        steps {
+            script {
+            withEnv(["ANSIBLE_HOST_KEY_CHECKING=False"]) {
+                ansiblePlaybook(
+                    playbook: 'deploy.yml',
+                    inventory: 'inventory'
+                )
             }
         }
+    }
+    }
     }
 }
