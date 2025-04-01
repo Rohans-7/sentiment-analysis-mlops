@@ -1,5 +1,5 @@
 - name: Deploy Sentiment Analysis App
-  hosts: all
+  hosts: localhost
   become: true
   tasks:
 
