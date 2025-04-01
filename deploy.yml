@@ -8,6 +8,9 @@
         name: docker.io
         state: present
 
+    - name: Install Kubernetes CLI
+      shell: curl -LO "https://dl.k8s.io/release/v1.26.0/bin/linux/amd64/kubectl" && chmod +x kubectl && mv kubectl /usr/local/bin/
+
     - name: Start Docker Service
       service:
         name: docker
@@ -16,9 +19,6 @@
 
     - name: Pull Docker Image
       shell: docker pull imrds7/sentiment-analysis-app:latest
-
-    # - name: Running container
-    #   shell: docker run -it -d -p 5000:5000 --name sentiment-analysis-app imrds7/sentiment-analysis-app /bin/bash
 
     - name: Apply Kubernetes Deployment
       shell: kubectl apply -f k8s-deployment.yaml
