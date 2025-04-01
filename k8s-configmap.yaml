@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sentiment-config
+data:
+  LOG_LEVEL: "INFO"
