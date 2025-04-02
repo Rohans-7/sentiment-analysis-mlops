@@ -1,6 +1,6 @@
 - name: Deploy Sentiment Analysis App
   hosts: localhost
-  become: true
+  become: false
   tasks:
 
     - name: Install Docker
