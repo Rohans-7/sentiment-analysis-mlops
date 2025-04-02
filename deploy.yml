@@ -3,10 +3,10 @@
   become: false
   tasks:
 
-    - name: Install Docker
-      apt:
-        name: docker.io
-        state: present
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
 
     - name: Pull Docker Image
       shell: docker pull imrds7/sentiment-analysis-app:latest
